@@ -1,0 +1,113 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Mitr', sans-serif;
+}
+
+h3{
+    display: flex;
+    align-items: center;
+    position: absolute;
+    margin-top: 30px;
+    font-size: 25px;
+    color: #fff;
+    margin-left: 25px;
+}
+
+body{
+    background-image: url(https://i0.wp.com/www.psicologiamsn.com/wp-content/uploads/2014/10/dia-noite.png?ssl=1);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+section{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section::before{
+    content: '';
+    position: absolute;
+    top: 10%;
+    right: 20%;
+    width: 300px;
+    height: 300px;
+    border-radius: 10px;
+    background: linear-gradient(#f00606, #fffb00);
+    animation: animate 5s ease-in-out infinite;
+}
+
+section::after{
+    content: '';
+    position: absolute;
+    bottom: 10%;
+    left: 20%;
+    width: 250px;
+    height: 250px;
+    border-radius: 10px;
+    background: linear-gradient(#090269, #000000);
+    animation: animate 5s ease-in-out infinite;
+    animation-delay: -2.5s;
+}
+
+@keyframes animate{
+    0%, 100%{
+        transform: translate(250px);
+    }
+    50%{
+        transform: translateY(-20px);
+    }
+}
+
+
+.clock{
+    position: relative;
+    width: 700px;
+    height: 250px;
+    background: rgba(49, 11, 216, 0.151);
+    z-index: 1000;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+}
+
+.clock .container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.clock .container{
+    font-size: 5rem;
+    color: #fff;
+}
+
+.clock .container h2 :nth-child(odd){
+    padding: 5px 15px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+    margin: 0 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.clock .container h2 #second{
+    color: #fff;
+}
+
+#ampm{
+    position: relative;
+    top: -50px;
+    font-size: 2rem;
+    color:#fff;
+    font-weight: 700;
+}
